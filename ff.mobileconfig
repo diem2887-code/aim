@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<!-- ==================================================== -->
+		<!-- МОДУЛЬ 1: СЕНСОРЫ И ЖЕСТЫ                          -->
+		<!-- ==================================================== -->
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>FF AimLock Touch Engine</string>
+			<key>PayloadIdentifier</key>
+			<string>com.aimlock.ff.touch.iphone12</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>A1111111-1111-1111-1111-111111111111</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.apple.Accessibility</key>
+				<dict>
+					<key>TouchAccommodationsEnabled</key>
+					<true/>
+					<key>TouchAccommodationsHoldDuration</key>
+					<real>0.001</real>
+					<key>TouchAccommodationsTapAssistanceEnabled</key>
+					<true/>
+					<key>TouchAccommodationsTapAssistanceTimeout</key>
+					<real>0.0005</real>
+					<key>TouchAccommodationsHoldDurationEnabled</key>
+					<true/>
+					<key>TouchAccommodationsIgnoreRepeatEnabled</key>
+					<true/>
+				</dict>
+				<key>com.apple.AssistiveTouch</key>
+				<dict>
+					<key>AssistiveTouchEnabled</key>
+					<true/>
+					<key>AssistiveTouchCustomGestures</key>
+					<array>
+						<dict>
+							<key>GestureName</key>
+							<string>FF_AimLock_Activate</string>
+							<key>GestureFingers</key>
+							<integer>2</integer>
+							<key>GestureTaps</key>
+							<integer>1</integer>
+							<key>GestureAction</key>
+							<string>com.aimlock.ff.activateaim</string>
+						</dict>
+						<dict>
+							<key>GestureName</key>
+							<string>FF_AimLock_HeadPriority</string>
+							<key>GestureFingers</key>
+							<integer>3</integer>
+							<key>GestureTaps</key>
+							<integer>1</integer>
+							<key>GestureAction</key>
+							<string>com.aimlock.ff.headshotprio</string>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+		</dict>
+
+		<!-- ==================================================== -->
+		<!-- МОДУЛЬ 2: GPU METAL                                -->
+		<!-- ==================================================== -->
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>FF AimLock Metal Engine</string>
+			<key>PayloadIdentifier</key>
+			<string>com.aimlock.ff.metal.iphone12</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>B2222222-2222-2222-2222-222222222222</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.apple.metal</key>
+				<dict>
+					<key>MetalCaptureEnabled</key>
+					<true/>
+					<key>MetalFrameCaptureEnabled</key>
+					<true/>
+					<key>MetalShaderValidationEnabled</key>
+					<false/>
+					<key>MetalGPUPriority</key>
+					<integer>2</integer>
+				</dict>
+			</dict>
+		</dict>
+
+		<!-- ==================================================== -->
+		<!-- МОДУЛЬ 3: VPN С ПОЛНЫМИ CONNECTION RULES            -->
+		<!-- ИСПОЛЬЗУЕТ СТАНДАРТНЫЙ com.apple.vpn.managed        -->
+		<!-- ==================================================== -->
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>FF AimLock AntiBan VPN</string>
+			<key>PayloadIdentifier</key>
+			<string>com.aimlock.ff.vpn.iphone12</string>
+			<key>PayloadType</key>
+			<string>com.apple.vpn.managed</string>
+			<key>PayloadUUID</key>
+			<string>C3333333-3333-3333-3333-333333333333</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>UserDefinedName</key>
+			<string>FF AimLock AntiBan</string>
+			<key>VPNType</key>
+			<string>L2TP</string>
+			<key>VPN</key>
+			<dict>
+				<key>AuthName</key>
+				<string>ffaimlock</string>
+				<key>AuthPassword</key>
+				<string>FFAimLock2024Secure</string>
+				<key>AuthenticationMethod</key>
+				<string>Password</string>
+				<key>RemoteAddress</key>
+				<string>127.0.0.1</string>
+				<key>SharedSecret</key>
+				<string>FFAimLockSecretKey</string>
+				<key>DisconnectOnIdle</key>
+				<integer>0</integer>
+				<key>OnDemandEnabled</key>
+				<integer>1</integer>
+				<key>OnDemandMatchDomainsAlways</key>
+				<array>
+					<string>garena.com</string>
+					<string>ff.garena.com</string>
+					<string>anticheat.garena.com</string>
+				</array>
+				<key>OnDemandMatchDomainsNever</key>
+				<array>
+					<string>apple.com</string>
+					<string>icloud.com</string>
+					<string>gstatic.com</string>
+					<string>googleapis.com</string>
+				</array>
+				<key>OnDemandRules</key>
+				<array>
+					<dict>
+						<key>Action</key>
+						<string>Connect</string>
+						<key>InterfaceTypeMatch</key>
+						<string>WiFi</string>
+						<key>URLStringProbe</key>
+						<string>https://garena.com/ff/anticheat</string>
+					</dict>
+					<dict>
+						<key>Action</key>
+						<string>Connect</string>
+						<key>InterfaceTypeMatch</key>
+						<string>Cellular</string>
+						<key>URLStringProbe</key>
+						<string>https://garena.com/ff/anticheat</string>
+					</dict>
+					<dict>
+						<key>Action</key>
+						<string>Disconnect</string>
+						<key>InterfaceTypeMatch</key>
+						<string>WiFi</string>
+						<key>URLStringProbe</key>
+						<string>https://apple.com</string>
+					</dict>
+					<dict>
+						<key>Action</key>
+						<string>Disconnect</string>
+						<key>InterfaceTypeMatch</key>
+						<string>Cellular</string>
+						<key>URLStringProbe</key>
+						<string>https://apple.com</string>
+					</dict>
+				</array>
+			</dict>
+			<key>DNS</key>
+			<dict>
+				<key>ServerAddresses</key>
+				<array>
+					<string>1.1.1.1</string>
+					<string>8.8.8.8</string>
+				</array>
+				<key>SupplementalMatchDomains</key>
+				<array>
+					<string>garena.com</string>
+					<string>ff.garena.com</string>
+				</array>
+			</dict>
+			<key>Proxies</key>
+			<dict>
+				<key>HTTPEnable</key>
+				<integer>0</integer>
+				<key>HTTPSEnable</key>
+				<integer>0</integer>
+				<key>ProxyAutoConfigEnable</key>
+				<integer>1</integer>
+				<key>ProxyAutoConfigURLString</key>
+				<string>data:text/plain;base64,ZnVuY3Rpb24gRmluZFByb3h5Rm9yVVJMKHVybCwgaG9zdCkgewogIGlmIChob3N0LmluY2x1ZGVzKCJnYXJlbmEuY29tIikgfHwgaG9zdC5pbmNsdWRlcygiYW50aWNoZWF0IikpIHsKICAgIHJldHVybiAiRElSRUNUIjsKICB9CiAgcmV0dXJuICJQUk9YWSI7Cn0=</string>
+			</dict>
+		</dict>
+
+		<!-- ==================================================== -->
+		<!-- МОДУЛЬ 4: DYLD INJECTION                            -->
+		<!-- ==================================================== -->
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>FF AimLock DYLD Hook</string>
+			<key>PayloadIdentifier</key>
+			<string>com.aimlock.ff.dyld.iphone12</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>E5555555-5555-5555-5555-555555555555</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.apple.dyld</key>
+				<dict>
+					<key>DYLD_INSERT_LIBRARIES</key>
+					<string>/var/mobile/Library/Application Support/FFAimLock/aimlock_core.dylib</string>
+					<key>DYLD_FORCE_FLAT_NAMESPACE</key>
+					<true/>
+					<key>DYLD_SHARED_REGION</key>
+					<string>private</string>
+				</dict>
+			</dict>
+		</dict>
+
+		<!-- ==================================================== -->
+		<!-- МОДУЛЬ 5: ПРОКСИ ДЛЯ ОБХОДА АНТИЧИТА              -->
+		<!-- ==================================================== -->
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>FF Global HTTP Proxy (AntiCheat)</string>
+			<key>PayloadIdentifier</key>
+			<string>com.aimlock.ff.proxy.iphone12</string>
+			<key>PayloadType</key>
+			<string>com.apple.proxy.managed</string>
+			<key>PayloadUUID</key>
+			<string>D4444444-4444-4444-4444-444444444444</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>ProxyType</key>
+			<string>Manual</string>
+			<key>ProxyServer</key>
+			<string>127.0.0.1</string>
+			<key>ProxyServerPort</key>
+			<integer>8080</integer>
+			<key>ProxyUsername</key>
+			<string>ffaimlock</string>
+			<key>ProxyPassword</key>
+			<string>FFAimLock2024Proxy</string>
+			<key>ProxyCaptiveLoginAllowed</key>
+			<true/>
+			<key>ProxyPACFallbackAllowed</key>
+			<true/>
+		</dict>
+	</array>
+
+	<!-- ==================================================== -->
+	<!-- КОРНЕВЫЕ ПАРАМЕТРЫ ПРОФИЛЯ                          -->
+	<!-- ==================================================== -->
+	<key>PayloadDisplayName</key>
+	<string>FF AimLock AntiBan v5 (iPhone 12)</string>
+	<key>PayloadIdentifier</key>
+	<string>com.aimlock.ff.iphone12.v5final</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>F6666666-6666-6666-6666-666666666666</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadDescription</key>
+	<string>AimLock Configuration for Free Fire. AntiBan Protection. iPhone 12 Only. v5.0 - Fixed connection rules.</string>
+	<key>PayloadOrganization</key>
+	<string>FF AimLock Solutions</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>ConsentText</key>
+	<dict>
+		<key>default</key>
+		<string>This profile configures AimLock for Free Fire. It includes touch optimization, GPU settings, VPN and proxy anti-ban protection. Install only on iPhone 12. Reboot after installation. VPN will auto-connect when Free Fire is detected.</string>
+	</dict>
+</dict>
+</plist>

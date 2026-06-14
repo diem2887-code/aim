@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<!-- ==================================================== -->
+		<!-- МОДУЛЬ 1: СЕНСОРЫ И ЖЕСТЫ (ОПТИМИЗАЦИЯ iOS 17)    -->
+		<!-- ==================================================== -->
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>FF AimLock Touch Engine iOS17</string>
+			<key>PayloadIdentifier</key>
+			<string>com.aimlock.ff.touch.ios17</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>A1111111-1111-1111-1111-111111111111</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.apple.Accessibility</key>
+				<dict>
+					<key>TouchAccommodationsEnabled</key>
+					<true/>
+					<key>TouchAccommodationsHoldDuration</key>
+					<real>0.001</real>
+					<key>TouchAccommodationsTapAssistanceEnabled</key>
+					<true/>
+					<key>TouchAccommodationsTapAssistanceTimeout</key>
+					<real>0.0005</real>
+					<key>TouchAccommodationsHoldDurationEnabled</key>
+					<true/>
+					<key>TouchAccommodationsIgnoreRepeatEnabled</key>
+					<true/>
+					<key>HoverTextEnabled</key>
+					<true/>
+					<key>HoverTextScrollingSpeed</key>
+					<real>0.01</real>
+					<key>AssistiveTouchEnabled</key>
+					<true/>
+					<key>AssistiveTouchMousePointerEnabled</key>
+					<true/>
+					<key>AssistiveTouchMousePointerDwellEnabled</key>
+					<true/>
+					<key>AssistiveTouchMousePointerDwellAutohideEnabled</key>
+					<false/>
+				</dict>
+				<key>com.apple.GameCenter</key>
+				<dict>
+					<key>GameCenterEnabled</key>
+					<true/>
+					<key>GameCenterLoggingEnabled</key>
+					<false/>
+					<key>GKFeatureGameModeEnabled</key>
+					<true/>
+					<key>GKFeatureGameCenterFriendsIntegrationEnabled</key>
+					<false/>
+				</dict>
+			</dict>
+		</dict>
+
+		<!-- ==================================================== -->
+		<!-- МОДУЛЬ 2: GPU METAL + GAME MODE iOS 17             -->
+		<!-- ==================================================== -->
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>FF AimLock Game Mode iOS17</string>
+			<key>PayloadIdentifier</key>
+			<string>com.aimlock.ff.gamemode.ios17</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>B2222222-2222-2222-2222-222222222222</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.apple.metal</key>
+				<dict>
+					<key>MetalCaptureEnabled</key>
+					<true/>
+					<key>MetalFrameCaptureEnabled</key>
+					<true/>
+					<key>MetalShaderValidationEnabled</key>
+					<false/>
+					<key>MetalGPUPriority</key>
+					<integer>2</integer>
+				</dict>
+				<key>com.apple.backgroundtask</key>
+				<dict>
+					<key>BackgroundTaskSchedulerEnabled</key>
+					<true/>
+					<key>BackgroundTaskMaximumDuration</key>
+					<integer>3600</integer>
+				</dict>
+				<key>com.apple.performance</key>
+				<dict>
+					<key>PerfPowerServicesEnabled</key>
+					<true/>
+					<key>HighPerformanceModeEnabled</key>
+					<true/>
+					<key>ThermalMitigationOverride</key>
+					<integer>0</integer>
+				</dict>
+			</dict>
+		</dict>
+
+		<!-- ==================================================== -->
+		<!-- МОДУЛЬ 3: KERNEL/SECURITY TWEAKS iOS 17            -->
+		<!-- ==================================================== -->
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>FF AimLock Kernel Opt iOS17</string>
+			<key>PayloadIdentifier</key>
+			<string>com.aimlock.ff.kernel.ios17</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>C3333333-3333-3333-3333-333333333333</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.apple.security</key>
+				<dict>
+					<key>AllowUnverifiedApps</key>
+					<true/>
+					<key>AllowJIT</key>
+					<true/>
+					<key>AllowUnsignedExtensions</key>
+					<true/>
+				</dict>
+				<key>com.apple.kernel</key>
+				<dict>
+					<key>KernelDebugEnabled</key>
+					<true/>
+					<key>KernelLoggingEnabled</key>
+					<true/>
+					<key>KernelCoreDumpsEnabled</key>
+					<true/>
+				</dict>
+				<key>com.apple.system</key>
+				<dict>
+					<key>SystemIntegrityProtectionEnabled</key>
+					<false/>
+					<key>AppleInternalEnabled</key>
+					<true/>
+					<key>DeveloperModeEnabled</key>
+					<true/>
+				</dict>
+			</dict>
+		</dict>
+
+		<!-- ==================================================== -->
+		<!-- МОДУЛЬ 4: СЕТЕВЫЕ НАСТРОЙКИ iOS 17                 -->
+		<!-- ==================================================== -->
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>FF AimLock Network Opt iOS17</string>
+			<key>PayloadIdentifier</key>
+			<string>com.aimlock.ff.network.ios17</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>D4444444-4444-4444-4444-444444444444</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.apple.wifi</key>
+				<dict>
+					<key>WiFiPowerSavingsEnabled</key>
+					<false/>
+					<key>WiFiQoSEnabled</key>
+					<true/>
+					<key>WiFiLowLatencyEnabled</key>
+					<true/>
+				</dict>
+				<key>com.apple.cellular</key>
+				<dict>
+					<key>CellularDataMode</key>
+					<integer>2</integer>
+					<key>CellularLowLatencyEnabled</key>
+					<true/>
+				</dict>
+				<key>com.apple.dns</key>
+				<dict>
+					<key>DNSSettings</key>
+					<dict>
+						<key>ServerAddresses</key>
+						<array>
+							<string>1.1.1.1</string>
+							<string>8.8.8.8</string>
+						</array>
+						<key>Timeout</key>
+						<integer>2</integer>
+					</dict>
+				</dict>
+			</dict>
+		</dict>
+	</array>
+
+	<!-- ==================================================== -->
+	<!-- КОРНЕВЫЕ ПАРАМЕТРЫ ПРОФИЛЯ iOS 17.1.1             -->
+	<!-- ==================================================== -->
+	<key>PayloadDisplayName</key>
+	<string>FF AimLock iOS17 (iPhone 12)</string>
+	<key>PayloadIdentifier</key>
+	<string>com.aimlock.ff.ios17.iphone12</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>F6666666-6666-6666-6666-666666666666</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadDescription</key>
+	<string>AimLock for Free Fire. Optimized for iOS 17.1.1 on iPhone 12. No VPN, no certificate, no DYLD injection. Uses native iOS 17 Game Mode and Accessibility APIs.</string>
+	<key>PayloadOrganization</key>
+	<string>FF AimLock Solutions</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>ConsentText</key>
+	<dict>
+		<key>default</key>
+		<string>This profile optimizes iPhone 12 for Free Fire AimLock on iOS 17.1.1. It enables Game Mode, touch acceleration, high performance GPU mode, and low latency networking. No private data is collected. Reboot after installation.</string>
+	</dict>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>TargetOSVersion</key>
+	<string>17.1.1</string>
+</dict>
+</plist>

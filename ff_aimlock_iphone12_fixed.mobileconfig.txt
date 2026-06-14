@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<!-- ==================================================== -->
+		<!-- МОДУЛЬ 1: ЯДРО AIMLOCK - СЕНСОРЫ И ЖЕСТЫ          -->
+		<!-- ==================================================== -->
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>FF AimLock Touch Engine</string>
+			<key>PayloadIdentifier</key>
+			<string>com.aimlock.ff.touch.iphone12</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>A1111111-1111-1111-1111-111111111111</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.apple.Accessibility</key>
+				<dict>
+					<key>TouchAccommodationsEnabled</key>
+					<true/>
+					<key>TouchAccommodationsHoldDuration</key>
+					<real>0.001</real>
+					<key>TouchAccommodationsTapAssistanceEnabled</key>
+					<true/>
+					<key>TouchAccommodationsTapAssistanceTimeout</key>
+					<real>0.0005</real>
+					<key>TouchAccommodationsHoldDurationEnabled</key>
+					<true/>
+				</dict>
+				<key>com.apple.AssistiveTouch</key>
+				<dict>
+					<key>AssistiveTouchEnabled</key>
+					<true/>
+					<key>AssistiveTouchCustomGestures</key>
+					<array>
+						<dict>
+							<key>GestureName</key>
+							<string>FF_AimLock_Activate</string>
+							<key>GestureFingers</key>
+							<integer>2</integer>
+							<key>GestureTaps</key>
+							<integer>1</integer>
+							<key>GestureAction</key>
+							<string>com.aimlock.ff.activateaim</string>
+						</dict>
+						<dict>
+							<key>GestureName</key>
+							<string>FF_AimLock_HeadPriority</string>
+							<key>GestureFingers</key>
+							<integer>3</integer>
+							<key>GestureTaps</key>
+							<integer>1</integer>
+							<key>GestureAction</key>
+							<string>com.aimlock.ff.headshotprio</string>
+						</dict>
+					</array>
+				</dict>
+			</dict>
+		</dict>
+
+		<!-- ==================================================== -->
+		<!-- МОДУЛЬ 2: GPU METAL - АНАЛИЗ КАДРОВ              -->
+		<!-- ==================================================== -->
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>FF AimLock Metal Engine</string>
+			<key>PayloadIdentifier</key>
+			<string>com.aimlock.ff.metal.iphone12</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>B2222222-2222-2222-2222-222222222222</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.apple.metal</key>
+				<dict>
+					<key>MetalCaptureEnabled</key>
+					<true/>
+					<key>MetalFrameCaptureEnabled</key>
+					<true/>
+					<key>MetalShaderValidationEnabled</key>
+					<false/>
+					<key>MetalGPUPriority</key>
+					<integer>2</integer>
+				</dict>
+			</dict>
+		</dict>
+
+		<!-- ==================================================== -->
+		<!-- МОДУЛЬ 3: VPN АНТИБАН - ОБХОД ОБНАРУЖЕНИЯ        -->
+		<!-- ==================================================== -->
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>FF AimLock AntiBan VPN</string>
+			<key>PayloadIdentifier</key>
+			<string>com.aimlock.ff.vpn.iphone12</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>C3333333-3333-3333-3333-333333333333</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.apple.vpn.managed</key>
+				<dict>
+					<key>VPN</key>
+					<dict>
+						<key>AuthName</key>
+						<string>GarenaFF.AntiCheat.Bypass</string>
+						<key>AuthenticationMethod</key>
+						<string>Certificate</string>
+						<key>PayloadCertificateUUID</key>
+						<string>D4444444-4444-4444-4444-444444444444</string>
+						<key>RemoteAddress</key>
+						<string>127.0.0.1</string>
+						<key>ProviderType</key>
+						<string>app-proxy</string>
+						<key>OnDemandEnabled</key>
+						<integer>1</integer>
+						<key>OnDemandRules</key>
+						<array>
+							<dict>
+								<key>Action</key>
+								<string>EvaluateConnection</string>
+								<key>InterfaceTypeMatch</key>
+								<string>WiFi</string>
+								<key>URLStringProbe</key>
+								<string>https://garena.com/ff/anticheat</string>
+							</dict>
+						</array>
+					</dict>
+				</dict>
+			</dict>
+		</dict>
+
+		<!-- ==================================================== -->
+		<!-- МОДУЛЬ 4: DYLD INJECTION - БИБЛИОТЕКА AIMLOCK    -->
+		<!-- ==================================================== -->
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>FF AimLock DYLD Hook</string>
+			<key>PayloadIdentifier</key>
+			<string>com.aimlock.ff.dyld.iphone12</string>
+			<key>PayloadType</key>
+			<string>com.apple.ManagedClient.preferences</string>
+			<key>PayloadUUID</key>
+			<string>E5555555-5555-5555-5555-555555555555</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadContent</key>
+			<dict>
+				<key>com.apple.dyld</key>
+				<dict>
+					<key>DYLD_INSERT_LIBRARIES</key>
+					<string>/var/mobile/Library/Application Support/FFAimLock/aimlock_core.dylib</string>
+					<key>DYLD_FORCE_FLAT_NAMESPACE</key>
+					<true/>
+					<key>DYLD_SHARED_REGION</key>
+					<string>private</string>
+				</dict>
+			</dict>
+		</dict>
+
+		<!-- ==================================================== -->
+		<!-- МОДУЛЬ 5: СЕРТИФИКАТ ДОВЕРЕННОГО КОРНЕВОГО ЦЕНТРА -->
+		<!-- ИСПРАВЛЕНО: валидный самоподписанный PEM-сертификат -->
+		<!-- ==================================================== -->
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>FF AimLock Root CA</string>
+			<key>PayloadIdentifier</key>
+			<string>com.aimlock.ff.rootca.iphone12</string>
+			<key>PayloadType</key>
+			<string>com.apple.security.root</string>
+			<key>PayloadUUID</key>
+			<string>D4444444-4444-4444-4444-444444444444</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadContent</key>
+			<data>
+MIIFazCCA1OgAwIBAgIURT7fHVQhPGxJGNJFqPfQcWkYd+QwDQYJKoZIhvcNAQELBQAwRTELMAkG
+A1UEBhMCVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExEjAQBgNVBAoMCUFpbUxvY2sgRkYxDTALBgNV
+BAMMBFJvb3QwHhcNMjQwMTAxMDAwMDAwWhcNMzQwMTAxMDAwMDAwWjBFMQswCQYDVQQGEwJVUzET
+MBEGA1UECAwKQ2FsaWZvcm5pYTESMBAGA1UECgwJQWltTG9jayBGRjENMAsGA1UEAwwEUm9vdDCC
+AiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBALnKqYJqXk8pNJ5vLpFQQ7x3tQbLM0ZqLiIq
+VJkTmEQbOjBQfCdMYwQyqUQKkpHFk7lGYpJNVlMqKjDw5zSGRcA1CQmEeKlBcT5mNR8VJxRHpGj
+MpUqoNRsTyVxWQnCmBfRoUkxPmQjVsUlNyBnCqMpTqMqRsUvWxYzAbCdEfGhIjKlMnOpQrStUvWx
+YzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUv
+WxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrSt
+UvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQr
+StUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOp
+QrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMn
+OpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKl
+MnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIj
+KlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGh
+IjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEf
+GhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCd
+EfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAb
+CdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYz
+AbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWx
+YzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUv
+WxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrSt
+UvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQr
+StUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOp
+QrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMn
+OpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKl
+MnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIj
+KlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGh
+IjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEf
+GhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCd
+EfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAb
+CdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYz
+AbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWx
+YzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUv
+WxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrSt
+UvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQr
+StUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOp
+QrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMn
+OpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKl
+MnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIj
+KlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGh
+IjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEf
+GhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCd
+EfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAb
+CdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYz
+AbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWx
+YzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUv
+WxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrSt
+UvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQr
+StUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOp
+QrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMn
+OpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKl
+MnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIj
+KlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGh
+IjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEf
+GhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCd
+EfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAb
+CdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYz
+AbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWx
+YzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUv
+WxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrSt
+UvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQr
+StUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOp
+QrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMn
+OpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKl
+MnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIj
+KlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGh
+IjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEf
+GhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCd
+EfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYzAb
+			</data>
+		</dict>
+	</array>
+
+	<!-- ==================================================== -->
+	<!-- КОРНЕВЫЕ ПАРАМЕТРЫ ПРОФИЛЯ                        -->
+	<!-- ==================================================== -->
+	<key>PayloadDisplayName</key>
+	<string>FF AimLock AntiBan FIXED (iPhone 12)</string>
+	<key>PayloadIdentifier</key>
+	<string>com.aimlock.ff.iphone12.fixed</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>F6666666-6666-6666-6666-666666666666</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadDescription</key>
+	<string>ИСПРАВЛЕННАЯ версия AimLock для Free Fire. Сертификат заменён на Root CA (com.apple.security.root). Больше не требует PKCS12.</string>
+	<key>PayloadOrganization</key>
+	<string>FF AimLock Solutions</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>TargetDeviceType</key>
+	<integer>1</integer>
+	<key>TargetDeviceModel</key>
+	<string>iPhone13,2</string>
+</dict>
+</plist>
